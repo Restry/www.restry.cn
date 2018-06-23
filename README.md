@@ -4,8 +4,10 @@ That's the code of my website (restry.cn). My first production-use of the Gatsby
 
 
 
-## Screenshots
-![](static/assets/readme-screens.png)
+## Deploy to netlify
+
+<!-- Markdown snippet -->
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Restry/www.restry.cn)
 
 
 
