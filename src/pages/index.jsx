@@ -21,7 +21,7 @@ const Index = props => {
           c-content-box__subheadline--with-button
         `}
       >
-        I build web interfaces
+        I build web interfaces, and I'm also very interested in artificial intelligence and I’m now learning about Ng's video
       </h2>
     </div>
   );

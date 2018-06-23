@@ -10,6 +10,9 @@ export default () => (
       Playground
       {/*<span>What's that?</span>*/}
     </HeadlineWithFocus>
+    <ol>
+      <li><a href="https://blog.restry.cn" target="_blank">My Blog</a> </li>
+    </ol>
     <p>Coming soon...</p>
   </div>
 );
