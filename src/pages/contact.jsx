@@ -15,12 +15,12 @@ export default props => {
       <ul className="c-contact-list">
         <li className="c-contact-list__item">
           <FaEnvelopeO />
-          <Obfuscate email="restry@gmail.com" />
+          <Obfuscate email="michael.keepgoing@gmail.com" />
         </li>
         <li className="c-contact-list__item">
           <FaTwitter />
           <a
-            href="https://twitter.com/restry"
+            href="https://twitter.com/vol_mike"
             target="_blank"
             rel="noopener noreferrer"
           >
