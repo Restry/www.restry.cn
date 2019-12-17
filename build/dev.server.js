@@ -2,6 +2,7 @@ const { resolve } = require('path');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
+const fallback = require('connect-history-api-fallback')
 // const logger = require('../logger');
 const config = require('./webpack.config.base');
 
@@ -62,8 +63,9 @@ process.on('unhandledRejection', onUnhandledError);
 process.on('uncaughtException', onUnhandledError);
 
 const app = express();
+app.use(fallback());
 
-app.use('/public', express.static(path.resolve(__dirname, './public')));
+app.use('/static', express.static(path.resolve(__dirname, '../static')));
 
 app.set('env', process.env.NODE_ENV);
 // logger.info(`Application env: ${process.env.NODE_ENV}`);
