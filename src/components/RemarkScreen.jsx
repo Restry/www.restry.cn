@@ -12,11 +12,11 @@ const ForHomePageContent = (
       There's something I want you to remember while you're going over the website.
     </p>
     <p>
-      At present, I'm open to <b>full time on-site job</b> offers (Warsaw or London).
+      At present, I'm open to <b>part time remote job</b> offers.
     </p>
     <p>
       If you realize that I would be a good fit, drop me 
-      a message at <b> restry@gmail.com' </b>.
+      a message at <b> Michael.keepgoing@gmail.com' </b>.
     </p>
     <p>
       Thank you. Now, you're free to go further.
@@ -30,7 +30,7 @@ const ForContactPageContent = (
       <b>Hi there</b><br /> Before you leave
     </p>
     <p>
-      I want you to remember that at present, I am open to <b>full time on-site job</b> offers (Warsaw or London).
+      I want you to remember that at present, I am open to <b>part time remote job</b> offers.
     </p>
     <p>
       If you feel that you want me on your team, drop me 
