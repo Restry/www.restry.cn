@@ -62,10 +62,15 @@ const config = {
     ]
   },
   resolve: {
-    extensions: [  '.js', '.jsx'],
+    extensions: ['.js', '.jsx'],
     // alias: {
     //   vue: 'vue/dist/vue.js'
     // }
+  },
+  externals: {
+    react: 'React',
+    'react-dom': 'ReactDOM',
+    'react-router-dom': 'ReactRouterDOM'
   },
   output: {
     path: resolve(__dirname, '../dist'),
@@ -81,8 +86,9 @@ const config = {
   plugins: [
     new HtmlWebpackPlugin({
       inject: true,
-      template: resolve(__dirname, '..', 'src', 'index.html'),
-      alwaysWriteToDisk: true
+      template: resolve(__dirname, '..', 'src', 'index.ejs'),
+      alwaysWriteToDisk: true,
+      isProd: process.env.NODE_ENV !== 'development'
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
