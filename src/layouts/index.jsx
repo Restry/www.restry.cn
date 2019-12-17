@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from "prop-types";
+import { useStore } from '../store';
 // import { connect } from "react-redux";
 import Helmet from 'react-helmet';
 import { Switch, Route, useParams, useLocation } from 'react-router-dom'
@@ -22,6 +22,10 @@ const DefaultLayout = (props) => {
   let params = useParams();
   let location = useLocation();
   console.log(`useLocation:${location}`, params, location);
+
+  const [{ remarkScreen }, dispatch] = useStore();
+  const toggleScreen = () => dispatch({ type: 'TOGGLE_REMARK_SCREEN' });
+
   return (
     <div className="l-page-wrapper">
       <Helmet
@@ -32,7 +36,7 @@ const DefaultLayout = (props) => {
         }]}
       />
 
-      <div className={`l-page-container ${props.remarkScreenisActive && 'is-blurred'}`}>
+      <div className={`l-page-container ${remarkScreen.isActive && 'is-blurred'}`}>
         <MainHeader />
         <main className="l-main">
 
@@ -52,11 +56,13 @@ const DefaultLayout = (props) => {
           || location.pathname === '/contact/')
         &&
         <ActionButtonContainer
+          remarkScreenIsActive={remarkScreen.isActive}
+          buttonClickHandler={toggleScreen}
           locationPathName={location.pathname}
         />
       }
       <RemarkScreenContainer
-      locationPathName={location.pathname}
+        locationPathName={location.pathname}
       />
 
     </div>

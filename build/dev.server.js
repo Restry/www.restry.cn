@@ -23,6 +23,7 @@ config.entry.app = [
 ]
 config.plugins.push(new webpack.HotModuleReplacementPlugin());
 config.plugins.push(new webpack.NamedModulesPlugin());
+config.mode = process.env.NODE_ENV;
 
 const compiler = webpack(config);
 
@@ -46,7 +47,7 @@ function setup(app) {
 
 
 const setupAppRoutes =
-  process.env.NODE_ENV === 'development' ? setup : () => {};
+  process.env.NODE_ENV === 'development' ? setup : () => { };
 
 
 function onUnhandledError(err) {

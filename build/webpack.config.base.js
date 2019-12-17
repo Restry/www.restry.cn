@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const config = {
-  mode: 'development',
+  mode: 'production',
   entry: {
     app: resolve(__dirname, '../src/app.jsx')
   },
@@ -71,7 +71,8 @@ const config = {
     path: resolve(__dirname, '../dist'),
 
     publicPath: '/',
-    filename: '[name].js'
+    filename: '[name].[hash:4].js',
+    chunkFilename: '[name].js'
   },
 
   // devServer: {
@@ -85,7 +86,7 @@ const config = {
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
-      chunkFilename: "[id].css"
+      chunkFilename: "[name].chunk.css"
     })
   ]
 }

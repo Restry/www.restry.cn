@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import { FaMapMarker, FaEnvelopeO, FaPaperPlaneO, FaWrench, FaChevronDown, FaChevronUp } from 'react-icons/lib/fa';
-import { TiCodeOutline } from 'react-icons/lib/ti';
+// import { TiCodeOutline } from 'react-icons/lib/ti';
 
 const ListLink = (props) => (
   <li className="c-main-nav__elem" >
@@ -22,6 +22,7 @@ class MainNav extends React.Component {
     super(props);
     this.toggleMenu = this.toggleMenu.bind(this);
     this.closeMenu = this.closeMenu.bind(this);
+
     this.state = {
       links: [
         { to: '/', text: 'Home', icon: FaMapMarker },

@@ -1,44 +1,51 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 // import { connect } from 'react-redux';
+import { useStore } from '../store';
 
-import { toggleRemarkScreen } from '../state/actions'; 
+import { toggleRemarkScreen } from '../state/actions';
 import RemarkScreen from '../components/RemarkScreen';
 
-class RemarkScreenContainer extends React.Component {
-  constructor(props) {  
-    super(props);
-  }
+const RemarkScreenContainer = (props) => {
 
-  componentDidMount() {
-    this.initializeEscClosing();
-  }
+  // componentDidMount() {
+  //   this.initializeEscClosing();
+  // }
 
-  initializeEscClosing() {
+  const [{ remarkScreen }, dispatch] = useStore();
+  const toggleScreen = () => dispatch({ type: 'TOGGLE_REMARK_SCREEN' });
+
+  const initializeEscClosing = () => {
     if (typeof window !== 'undefined') {
       window.addEventListener('keydown', (e) => {
-        if (this.props.isActive && e.which == 27) {
-          this.props.toggleScreen();
-        } 
+        if (remarkScreen.isActive && e.which == 27) {
+          toggleScreen();
+        }
       });
-    } 
+    }
   }
-  
-  render() {
-    return (
-      <div>
-        <RemarkScreen
-          isActive={this.props.isActive}
-          locationPathName={this.props.locationPathName}
-          onClick={this.props.toggleScreen}
-        />
-        {this.props.isActive && <div 
-            onClick={this.props.toggleScreen}
-            className="c-remark-screen-overlay"
-          >
-          </div>}
-      </div>
-    )
-  }
+
+  useEffect(() => {
+    initializeEscClosing();
+
+    return () => window.removeEventListener('keydown', () => { });
+  }, [remarkScreen])
+
+
+  return (
+    <div>
+      <RemarkScreen
+        isActive={remarkScreen.isActive}
+        locationPathName={props.locationPathName}
+        onClick={toggleScreen}
+      />
+      {remarkScreen.isActive && <div
+        onClick={toggleScreen}
+        className="c-remark-screen-overlay"
+      >
+      </div>}
+    </div>
+  )
+
 }
 
 const mapStateToProps = (state, ownProps) => {
