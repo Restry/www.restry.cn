@@ -87,14 +87,7 @@ class ToolBoxListContainer extends React.Component {
             that manage their own state and then compose them to make complex UIs.`,
           comment: `I've been in love since using it for the first time.`
         },
-        {
-          id: 9,
-          label: "Gatsby",
-          description: `A static PWA (Progressive Web App) 
-            <a href="https://www.gatsbyjs.org/" target="_blank">generator</a>. Gatsby lets 
-            you build blazing-fast sites with your data, whatever the source.`,
-          comment: `The website you are looking at now is built with Gatsby.`
-        },
+     
         {
           id: 20,
           label: "GraphQL",

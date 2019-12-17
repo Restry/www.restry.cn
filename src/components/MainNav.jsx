@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import {Link} from 'react-router-dom';
 import { FaMapMarker, FaEnvelopeO, FaPaperPlaneO, FaWrench, FaChevronDown, FaChevronUp } from 'react-icons/lib/fa';
 import { TiCodeOutline } from 'react-icons/lib/ti';
 
@@ -26,7 +26,7 @@ class MainNav extends React.Component {
       links: [
         { to: '/', text: 'Home', icon: FaMapMarker },
         { to: '/toolbox/', text: 'Toolbox', icon: FaWrench },
-        { to: '/playground/', text: 'Playground', icon: FaPaperPlaneO },
+        { to: '/playground/123', text: 'Playground', icon: FaPaperPlaneO },
         { to: '/contact/', text: 'Contact', icon: FaEnvelopeO }
       ],
       mainNavModifierClassName: '',

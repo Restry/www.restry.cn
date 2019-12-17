@@ -1,17 +1,11 @@
 import React from "react";
-import Link from "gatsby-link";
+import {Link} from "react-router-dom";
 
 const MainFooter = () => (
   <div className="c-main-footer">
     <p className="c-main-footer__note">
       Build with{" "}
-      <a
-        href="https://www.gatsbyjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Gatsby
-      </a>{" "}
+     
       and{" "}
       <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
         React

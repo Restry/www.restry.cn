@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 
 import { toggleRemarkScreen } from '../state/actions';  
 import ActionButton from '../components/ActionButton';
@@ -183,4 +183,5 @@ const mapDispatchToProps = (dispatch) => {
   return { buttonClickHandler: () => dispatch(toggleRemarkScreen()) };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ActionButtonContainer);
+export default ActionButtonContainer;
+// export default connect(mapStateToProps, mapDispatchToProps)(ActionButtonContainer);

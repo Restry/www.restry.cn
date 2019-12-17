@@ -1,6 +1,6 @@
 import React from 'react';
-import Link from 'gatsby-link';
-import Obfuscate from 'react-obfuscate';
+import {Link} from 'react-router-dom';
+// import Obfuscate from 'react-obfuscate';
 import { FaPaperPlaneO, FaWrench } from 'react-icons/lib/fa';
 
 const ForHomePageContent = (
@@ -16,7 +16,7 @@ const ForHomePageContent = (
     </p>
     <p>
       If you realize that I would be a good fit, drop me 
-      a message at <b><Obfuscate email='restry@gmail.com' /></b>.
+      a message at <b> restry@gmail.com' </b>.
     </p>
     <p>
       Thank you. Now, you're free to go further.
@@ -34,7 +34,7 @@ const ForContactPageContent = (
     </p>
     <p>
       If you feel that you want me on your team, drop me 
-      a message at <b><Obfuscate email='restry@gmail.com' /></b>.
+      a message at <b> </b>.
     </p>
     <p>
       

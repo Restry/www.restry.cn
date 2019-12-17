@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 
 import { toggleRemarkScreen } from '../state/actions'; 
 import RemarkScreen from '../components/RemarkScreen';
@@ -49,4 +49,5 @@ const mapDispatchToProps = (dispatch) => {
   return { toggleScreen: () => dispatch(toggleRemarkScreen()) };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(RemarkScreenContainer);
+export default RemarkScreenContainer;
+// export default connect(mapStateToProps, mapDispatchToProps)(RemarkScreenContainer);
