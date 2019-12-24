@@ -1,6 +1,7 @@
 import React from 'react';
-import { FaClose } from 'react-icons/lib/fa/'; 
+// import { FaClose } from 'react-icons/lib/fa/'; 
 import Avatar from '../components/Avatar';
+import Icon from './Icon';
 
 const ToolBoxPopOver = ({ 
   top, 
@@ -26,7 +27,7 @@ const ToolBoxPopOver = ({
         className="c-toolbox-popover__close"
         onClick={onClick}
       >
-        <FaClose />
+        <Icon name="roundclose" />
       </button>
       <div className="c-toolbox-popover__text">
         <p className="c-toolbox-popover__description"

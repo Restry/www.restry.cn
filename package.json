@@ -3,8 +3,8 @@
   "description": "base on react , my react blog",
   "license": "MIT",
   "scripts": {
-    "build": "webpack --config build/webpack.config.prod.js --progress --colors --display-chunks",
-    "start": "node ./build/dev.server"
+    "build": "cross-env NODE_ENV=production webpack --config build/webpack.config.prod.js --progress --colors --display-chunks",
+    "start": "cross-env NODE_ENV=development node ./build/dev.server"
   },
   "dependencies": {
     "react-router-dom": "^5.1.2"
@@ -16,6 +16,7 @@
     "babel-loader": "^8.0.6",
     "body-parser": "^1.19.0",
     "connect-history-api-fallback": "^1.6.0",
+    "cross-env": "^6.0.3",
     "css-loader": "^3.3.2",
     "express": "^4.17.1",
     "file-loader": "^5.0.2",
@@ -26,7 +27,6 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
-    "react-icons": "^2.2.7",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.1",
     "typeface-exo": "0.0.61",

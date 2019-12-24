@@ -1,21 +1,22 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import { FaMapMarker, FaEnvelopeO, FaPaperPlaneO, FaWrench, FaChevronDown, FaChevronUp } from 'react-icons/lib/fa';
+import { Link } from 'react-router-dom';
+// import { FaMapMarker, FaEnvelopeO, FaPaperPlaneO, FaWrench, FaChevronDown, FaChevronUp } from 'react-icons/lib/fa';
 // import { TiCodeOutline } from 'react-icons/lib/ti';
+import Icon from './Icon';
 
 const ListLink = (props) => (
   <li className="c-main-nav__elem" >
-    <Link 
-      to={props.to} 
-      className="c-main-nav__link" 
-      activeClassName="c-main-nav__link--is-active" 
+    <Link
+      to={props.to}
+      className="c-main-nav__link"
+      activeClassName="c-main-nav__link--is-active"
       exact={true}
       onClick={props.closeMenu}
     >
       {props.children}
     </Link>
   </li>
-);  
+);
 
 class MainNav extends React.Component {
   constructor(props) {
@@ -25,10 +26,10 @@ class MainNav extends React.Component {
 
     this.state = {
       links: [
-        { to: '/', text: 'Home', icon: FaMapMarker },
-        { to: '/toolbox/', text: 'Toolbox', icon: FaWrench },
-        { to: '/playground/123', text: 'Playground', icon: FaPaperPlaneO },
-        { to: '/contact/', text: 'Contact', icon: FaEnvelopeO }
+        { to: '/', text: 'Home', icon: () => <Icon name="GPS" /> },
+        { to: '/toolbox/', text: 'Toolbox', icon: () => <Icon name="certificate_fil" /> },
+        { to: '/playground/123', text: 'Playground', icon: () => <Icon name="nomemo" /> },
+        { to: '/contact/', text: 'Contact', icon: () => <Icon name="dmail" /> }
       ],
       mainNavModifierClassName: '',
       mobileDetailsNav: null
@@ -52,48 +53,49 @@ class MainNav extends React.Component {
     if (!this.state.mobileDetailsNav) {
       mobileDetailsNav = (
         <div className="c-main-nav c-main-nav--is-open">
-        { 
-          this.state.links.map((link, i) => (
-            <ListLink closeMenu={this.closeMenu} to={link.to} key={i} >
-              <link.icon />
-              <span className="c-main-nav__text">{link.text}</span>
-            </ListLink>  
-          )) 
-        }
+          {
+            this.state.links.map((link, i) => (
+              <ListLink closeMenu={this.closeMenu} to={link.to} key={i} >
+                <link.icon />
+                <span className="c-main-nav__text">{link.text}</span>
+              </ListLink>
+            ))
+          }
         </div>
       );
       mainNavModifierClassName = 'c-main-nav--is-hidden'
-    } 
+    }
 
     this.setState(() => ({
       mainNavModifierClassName: mainNavModifierClassName,
       mobileDetailsNav: mobileDetailsNav
     }));
   }
-  
+
   render() {
     return (
       <div>
-        <ul className={ `c-main-nav ${this.state.mainNavModifierClassName}` }>
-          { 
+
+        <ul className={`c-main-nav ${this.state.mainNavModifierClassName}`}>
+          {
             this.state.links.map((link, i) => (
               <ListLink to={link.to} key={i} testLink={this.testLink}>
                 <link.icon />
                 <span className="c-main-nav__text">{link.text}</span>
-              </ListLink>  
-            )) 
+              </ListLink>
+            ))
           }
-          <li 
-            className="c-main-nav__elem c-main-nav__elem--close-link" 
+          <li
+            className="c-main-nav__elem c-main-nav__elem--close-link"
             onClick={this.toggleMenu}
           >
             <a href="#" className="c-main-nav__link">
-              { (this.state.mainNavModifierClassName) ? <FaChevronUp /> : <FaChevronDown />  }
+              {(this.state.mainNavModifierClassName) ? <Icon name="down" /> : <Icon name="add" />}
               <span className="c-main-nav__text">Close</span>
             </a>
-          </li>    
-        </ul> 
-        { this.state.mobileDetailsNav }
+          </li>
+        </ul>
+        {this.state.mobileDetailsNav}
       </div>
     )
   }

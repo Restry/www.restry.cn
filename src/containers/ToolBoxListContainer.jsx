@@ -1,7 +1,7 @@
 import React from "react";
 import ToolBoxList from "../components/ToolBoxList";
 import ToolBoxPopOver from "../components/ToolBoxPopOver";
-import FaUser from "react-icons/lib/fa/user";
+// import FaUser from "react-icons/lib/fa/user";
 
 class ToolBoxListContainer extends React.Component {
   constructor(props) {

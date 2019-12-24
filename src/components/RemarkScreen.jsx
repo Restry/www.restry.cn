@@ -1,7 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 // import Obfuscate from 'react-obfuscate';
-import { FaPaperPlaneO, FaWrench } from 'react-icons/lib/fa';
+// import { FaPaperPlaneO, FaWrench } from 'react-icons/lib/fa';
+import Icon from './Icon';
 
 const ForHomePageContent = (
   <div className="c-remark-screen__message">
@@ -48,7 +49,7 @@ const ForContactPageContent = (
 
 const RemarkScreen = (props) => { 
   const links = [ 
-    { path: 'toolbox', icon: FaWrench }, 
+    { path: 'toolbox', icon: ()=><Icon name="nomemo" /> }, 
     //{ path: 'playground', icon: FaPaperPlaneO }
   ];
 

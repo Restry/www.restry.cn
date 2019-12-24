@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -6,20 +7,22 @@
   <title>Restry's me </title>
 
   <% if (htmlWebpackPlugin.options.isProd) { %>
-    <script crossorigin src="https://unpkg.com/react@16.12.0/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
-    <script crossorigin src="https://cdn.bootcss.com/react-router-dom/5.1.2/react-router-dom.min.js"></script> 
   <% } %>
-
+  <script crossorigin src="https://cdn.bootcss.com/react/16.10.2/umd/react.production.min.js"></script>
+  <script crossorigin src="https://cdn.bootcss.com/react-dom/16.10.2/umd/react-dom.production.min.js"></script>
+  <script crossorigin src="https://cdn.bootcss.com/react-router-dom/5.1.2/react-router-dom.min.js"></script>
+  <script crossorigin src="//at.alicdn.com/t/font_1579980_dgswhzpafp8.js"></script>
   <style>
-  #app{
-    /*  */
-    background: linear-gradient(#fff,#e0e0e00a),url(http://lorempixel.com/1400/1200/sports) no-repeat 0 34%/cover;
-    /* background: linear-gradient(#ffffff, #a7a7a740), url(/static/background.jpeg) no-repeat 0% 20%/ cover; */
-  }
+    #app {
+      /*  */
+      background: linear-gradient(#fff, #e0e0e00a), url(http://lorempixel.com/1400/1200/sports) no-repeat 0 34%/cover;
+      /* background: linear-gradient(#ffffff, #a7a7a740), url(/static/background.jpeg) no-repeat 0% 20%/ cover; */
+    }
   </style>
 </head>
+
 <body>
   <div id="app"></div>
 </body>
+
 </html>

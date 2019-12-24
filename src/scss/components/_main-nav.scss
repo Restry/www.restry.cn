@@ -36,6 +36,9 @@
     font-size: 1.3em;
     margin: 0 0 0 0;
     color: $nav-link-icon-color;
+
+    stroke: $nav-link-icon-color; 
+    stroke-width: 15px;
   }
 }
 

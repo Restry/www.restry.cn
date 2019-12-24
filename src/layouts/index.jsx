@@ -6,6 +6,8 @@ import { Switch, Route, useParams, useLocation } from 'react-router-dom'
 import Index from '../pages/index.jsx';
 import Contact from '../pages/contact';
 import Playground from '../pages/playground';
+import ToolBox from '../pages/toolbox';
+
 
 import '../scss/main.scss';
 require("typeface-exo");
@@ -21,7 +23,7 @@ const DefaultLayout = (props) => {
 
   let params = useParams();
   let location = useLocation();
-  console.log(`useLocation:${location}`, params, location);
+  // console.log(`useLocation:${location}`, params, location);
 
   const [{ remarkScreen }, dispatch] = useStore();
   const toggleScreen = () => dispatch({ type: 'TOGGLE_REMARK_SCREEN' });
@@ -44,6 +46,8 @@ const DefaultLayout = (props) => {
           <Switch>
             <Route exact path="/" component={Index} />
             <Route path="/contact" component={Contact} />
+            <Route path="/toolbox" component={ToolBox} />
+            
             <Route path="/playground/:id" component={Playground} />
           </Switch>
 

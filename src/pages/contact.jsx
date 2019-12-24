@@ -1,8 +1,9 @@
 import React from "react";
 import HeadlineWithFocus from "../components/HeadlineWithFocus";
 // import Obfuscate from "react-obfuscate";
-import { FaEnvelopeO, FaTwitter, FaGithub } from "react-icons/lib/fa/";
+// import { FaEnvelopeO, FaTwitter, FaGithub } from "react-icons/lib/fa/";
 import Helmet from "react-helmet";
+import Icon from "../components/Icon";
 
 export default props => {
   return (
@@ -14,10 +15,13 @@ export default props => {
       </HeadlineWithFocus>
       <ul className="c-contact-list">
         <li className="c-contact-list__item">
-          <FaEnvelopeO />
+          <Icon name="dmail" />
+          <a href="mailto:michael.keepgoing@gmail.com">
+          michael.keepgoing@gmail.com
+          </a>
         </li>
         <li className="c-contact-list__item">
-          <FaTwitter />
+          <Icon name="wechat" />
           <a
             href="https://twitter.com/vol_mike"
             target="_blank"
@@ -27,7 +31,7 @@ export default props => {
           </a>
         </li>
         <li className="c-contact-list__item">
-          <FaGithub />
+          <Icon name="signin_line" />
           <a
             href="https://github.com/restry"
             target="_blank"

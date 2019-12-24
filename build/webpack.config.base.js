@@ -88,7 +88,7 @@ const config = {
       inject: true,
       template: resolve(__dirname, '..', 'src', 'index.ejs'),
       alwaysWriteToDisk: true,
-      isProd: process.env.NODE_ENV !== 'development'
+      isProd: process.env.NODE_ENV === 'production'
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css",

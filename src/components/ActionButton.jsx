@@ -1,8 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
-
-import { FaArrowRight, FaClose, FaInfo } from 'react-icons/lib/fa/';
+import Icon from './Icon';
+// import { FaArrowRight, FaClose, FaInfo } from 'react-icons/lib/fa/';
 
 const ActionButton = ({ 
   topPx, 
@@ -27,8 +27,8 @@ const ActionButton = ({
       aria-label="Remark"
     > 
       {isActive 
-        ? (locationPathName === '/' ? <FaArrowRight /> : <FaInfo />) 
-        : <FaClose />}
+        ? (locationPathName === '/' ? <Icon name="next_arrow" /> : <Icon name="warn"/>) 
+        : <Icon name="roundclose"/>}
     </button>
   )
 } 
