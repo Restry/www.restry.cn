@@ -10,7 +10,7 @@ const fallback = require('connect-history-api-fallback')
 const router = express.Router();
  
 router.get('/', (req, res) => res.sendFile(path.resolve(__dirname, '../dist/index.html')));
-router.use('/api', api);
+// router.use('/api', api);
  
 app.use(bodyParser.json());
 app.use('/.netlify/functions/server', router);  // path must route to lambda
