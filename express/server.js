@@ -1,6 +1,7 @@
 'use strict';
 const express = require('express');
 const path = require('path');
+const fs = require('fs');
 const serverless = require('serverless-http');
 const app = express();
 const bodyParser = require('body-parser');
@@ -10,8 +11,8 @@ const bodyParser = require('body-parser');
 const router = express.Router();
 router.get('/', (req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/html' });
-  // res.write('<h1>Hello there this is restry fork from netlify Express.js!</h1>');
-  res.sendFile(path.resolve(__dirname, '../dist/index.html'))
+  res.write(fs.readFileSync(path.resolve(__dirname, '../dist/index.html')));
+  // res.sendFile(path.resolve(__dirname, '../dist/index.html'))
   res.end();
 }); 
 // router.get('/', (req, res) => res.sendFile(path.resolve(__dirname, '../dist/index.html')));
