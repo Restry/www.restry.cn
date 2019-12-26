@@ -1,8 +1,12 @@
 import axios from 'axios';
 
 
-const baseURL = '/api';
+let baseURL = '/api';
 const user = 'restry';
+
+if(process.env.NODE_ENV === 'production'){
+  baseURL = '/.netlify/functions/server/api'
+}
 
 
 export const base = axios.create({ baseURL });
