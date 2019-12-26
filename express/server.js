@@ -12,8 +12,8 @@ const router = express.Router();
 router.get('/', (req, res) => {
   const { p } = req.query;
   res.writeHead(200, { 'Content-Type': 'text/html' });
-
-  res.write(fs.readdirSync(path.resolve(__dirname, (p || ''))).join(';'));
+  console.log(`query:${JSON.stringify(req.query)}`);
+  res.write(fs.readdirSync(path.resolve(__dirname, decodeURIComponent(p))).join(';'));
   // res.sendFile(path.resolve(__dirname, '../dist/index.html'))
   res.end();
 });
