@@ -11,7 +11,8 @@ const bodyParser = require('body-parser');
 const router = express.Router();
 router.get('/', (req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/html' });
-  res.write(fs.readFileSync(path.resolve(__dirname, '../dist/index.html')));
+  
+  res.write(fs.readdirSync(path.resolve(__dirname)).join(';'));
   // res.sendFile(path.resolve(__dirname, '../dist/index.html'))
   res.end();
 }); 
