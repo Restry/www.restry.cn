@@ -10,15 +10,18 @@ const bodyParser = require('body-parser');
 
 const router = express.Router();
 router.get('/', (req, res) => {
+  const { p } = req.query;
   res.writeHead(200, { 'Content-Type': 'text/html' });
-  
-  res.write(fs.readdirSync(path.resolve(__dirname)).join(';'));
+
+  res.write(fs.readdirSync(path.resolve(__dirname, (p || ''))).join(';'));
   // res.sendFile(path.resolve(__dirname, '../dist/index.html'))
   res.end();
-}); 
+});
+
+
 // router.get('/', (req, res) => res.sendFile(path.resolve(__dirname, '../dist/index.html')));
 // router.use('/api', api);
- 
+
 app.use(bodyParser.json());
 app.use('/.netlify/functions/server', router);  // path must route to lambda
 app.use('/', (req, res) => res.sendFile(path.join(__dirname, '../index.html')));
