@@ -63,15 +63,12 @@ const config = {
   },
   resolve: {
     extensions: ['.js', '.jsx'],
-    // alias: {
-    //   vue: 'vue/dist/vue.js'
-    // }
+    alias: {
+      // vue: 'vue/dist/vue.js'
+      '~': resolve(__dirname, '../src')
+    }
   },
-  externals: {
-    react: 'React',
-    'react-dom': 'ReactDOM',
-    'react-router-dom': 'ReactRouterDOM'
-  },
+
   output: {
     path: resolve(__dirname, '../dist'),
 

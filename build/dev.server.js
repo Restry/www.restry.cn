@@ -4,7 +4,7 @@ const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const fallback = require('connect-history-api-fallback')
 // const logger = require('../logger');
-const config = require('./webpack.config.base');
+const config = require('./webpack.config');
 
 const http = require('http');
 const express = require('express');
@@ -12,7 +12,7 @@ const bodyParser = require('body-parser');
 // const setupApiRoutes = require('./middlewares/api');
 // const logger = require('./logger');
 const path = require('path');
-
+const api = require('./yuque');
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 process.env.HTTP_PORT = process.env.HTTP_PORT || 3000;
@@ -40,8 +40,11 @@ function setup(app) {
 
   app.use(webpackHotMiddleware(compiler));
 
+
   // all other requests be handled by UI itself
   app.get('/', (req, res) => res.sendFile(resolve(__dirname, '../dist/index.html')));
+
+
 };
 
 
@@ -64,8 +67,8 @@ process.on('unhandledRejection', onUnhandledError);
 process.on('uncaughtException', onUnhandledError);
 
 const app = express();
-app.use(fallback());
 
+app.use('/api', api);
 app.use('/static', express.static(path.resolve(__dirname, '../static')));
 
 app.set('env', process.env.NODE_ENV);
@@ -74,6 +77,7 @@ app.set('env', process.env.NODE_ENV);
 // app.use(logger.expressMiddleware);
 app.use(bodyParser.json());
 
+app.use(fallback());
 // application routes
 // setupApiRoutes(app);
 setupAppRoutes(app);

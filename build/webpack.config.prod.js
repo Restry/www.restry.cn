@@ -1,10 +1,14 @@
-const baseConfig = require('./webpack.config.base');
+const baseConfig = require('./webpack.config');
 const webpack = require('webpack');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
- 
-// baseConfig.plugins.push(new BundleAnalyzerPlugin());
 
+// baseConfig.plugins.push(new BundleAnalyzerPlugin());
+baseConfig.externals = {
+  react: 'React',
+  'react-dom': 'ReactDOM',
+  'react-router-dom': 'ReactRouterDOM'
+};
 baseConfig.optimization = {
   splitChunks: {
     chunks: 'all',
@@ -24,7 +28,7 @@ baseConfig.optimization = {
         },
         chunks: 'initial',
         priority: 10,
-      }, 
+      },
       common: {
         name: 'common',
         chunks: 'initial',
