@@ -3,8 +3,10 @@
   "description": "base on react , my react blog",
   "license": "MIT",
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack --config build/webpack.config.prod.js --progress --colors --display-chunks",
-    "start": "cross-env NODE_ENV=development node ./build/dev.server"
+    "pack": "cross-env NODE_ENV=production webpack --config build/webpack.config.prod.js --progress --colors --display-chunks",
+    "dev": "cross-env NODE_ENV=development node ./build/dev.server",
+    "build": "netlify-lambda build express",
+    "start": "nodemon server-local.js"
   },
   "dependencies": {
     "@babel/runtime": "^7.7.7",
@@ -21,6 +23,8 @@
     "body-parser": "^1.19.0",
     "connect-history-api-fallback": "^1.6.0",
     "cross-env": "^6.0.3",
+    "netlify-lambda": "^1.6.3",
+    "nodemon": "^1.19.2",
     "css-loader": "^3.3.2",
     "express": "^4.17.1",
     "file-loader": "^5.0.2",
