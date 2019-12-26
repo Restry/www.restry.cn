@@ -4,8 +4,8 @@ const path = require('path');
 const serverless = require('serverless-http');
 const app = express();
 const bodyParser = require('body-parser');
-const api = require('./yuque');
-const fallback = require('connect-history-api-fallback')
+// const api = require('./yuque');
+// const fallback = require('connect-history-api-fallback')
 
 const router = express.Router();
 router.get('/', (req, res) => {
