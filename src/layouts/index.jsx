@@ -50,7 +50,7 @@ const DefaultLayout = (props) => {
             <Route path="/contact" component={Contact} />
             <Route path="/toolbox" component={ToolBox} />
             
-            <Route path="/playground/:id" component={Playground} />
+            <Route path="/playground" component={Playground} />
             <Route path="/book/:id" component={Book} />
             <Route path="/doc/:bookId/:id" component={Doc} />
           </Switch>
