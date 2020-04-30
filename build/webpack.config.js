@@ -1,6 +1,7 @@
 const { resolve } = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin = require('copy-webpack-plugin');
 
 const config = {
   mode: 'development',
@@ -90,7 +91,10 @@ const config = {
     new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[name].chunk.css"
-    })
+    }),
+    new CopyPlugin([
+      { from: 'static', to: 'static' },
+    ]),
   ]
 }
 
