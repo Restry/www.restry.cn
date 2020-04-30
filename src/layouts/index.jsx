@@ -6,6 +6,8 @@ import { Switch, Route, useParams, useLocation } from 'react-router-dom'
 import Index from '../pages/index.jsx';
 import Contact from '../pages/contact';
 import Playground from '../pages/playground';
+import Book from '../pages/book';
+import Doc from '../pages/doc';
 import ToolBox from '../pages/toolbox';
 
 
@@ -49,6 +51,8 @@ const DefaultLayout = (props) => {
             <Route path="/toolbox" component={ToolBox} />
             
             <Route path="/playground/:id" component={Playground} />
+            <Route path="/book/:id" component={Book} />
+            <Route path="/doc/:bookId/:id" component={Doc} />
           </Switch>
 
         </main>

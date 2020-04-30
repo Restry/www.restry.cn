@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const config = {
-  mode: 'production',
+  mode: 'development',
   entry: {
     app: resolve(__dirname, '../src/app.jsx')
   },

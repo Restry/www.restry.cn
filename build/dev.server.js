@@ -12,10 +12,11 @@ const bodyParser = require('body-parser');
 // const setupApiRoutes = require('./middlewares/api');
 // const logger = require('./logger');
 const path = require('path');
-const api = require('./yuque');
+const { createProxyMiddleware } = require('http-proxy-middleware');
+// const api = require('./yuque');
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
-process.env.HTTP_PORT = process.env.HTTP_PORT || 3000;
+process.env.HTTP_PORT = process.env.HTTP_PORT || 3008;
 
 config.entry.app = [
   `webpack-hot-middleware/client?http://localhost:${process.env.HTTP_PORT}&reload=true`,
@@ -34,17 +35,14 @@ function setup(app) {
       publicPath: config.output.publicPath,
       stats: {
         colors: true
-      }
+      },
+      
     })
   );
 
   app.use(webpackHotMiddleware(compiler));
-
-
   // all other requests be handled by UI itself
   app.get('/', (req, res) => res.sendFile(resolve(__dirname, '../dist/index.html')));
-
-
 };
 
 
@@ -68,7 +66,28 @@ process.on('uncaughtException', onUnhandledError);
 
 const app = express();
 
-app.use('/api', api);
+
+// proxy middleware options
+const options = {
+  target: 'http://127.0.0.1:9000/.netlify/functions/server', // target host
+  changeOrigin: true, // needed for virtual hosted sites
+  // ws: true, // proxy websockets
+  pathRewrite: {
+    '^/api': '/', // rewrite path
+    // '^/api/remove/path': '/path', // remove base path
+  },
+  // router: {
+  //   // when request.headers.host == 'dev.localhost:3000',
+  //   // override target 'http://www.example.org' to 'http://localhost:8000'
+  //   'dev.localhost:3000': 'http://localhost:8000',
+  // },
+};
+
+// create the proxy (without context)
+const exampleProxy = createProxyMiddleware(options);
+
+
+app.use('/api/*', exampleProxy);
 app.use('/static', express.static(path.resolve(__dirname, '../static')));
 
 app.set('env', process.env.NODE_ENV);

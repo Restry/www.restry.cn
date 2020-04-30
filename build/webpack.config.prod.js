@@ -2,6 +2,7 @@ const baseConfig = require('./webpack.config');
 const webpack = require('webpack');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
+baseConfig.mode='production';
 
 // baseConfig.plugins.push(new BundleAnalyzerPlugin());
 baseConfig.externals = {
