@@ -6,44 +6,14 @@ import Icon from './Icon';
 
 const ForHomePageContent = (
   <div className="c-remark-screen__message">
-    <p>
-      <b>I'm restry</b><br /> that you're interested in my stuff.
-    </p>
-    <p>
-      There's something I want you to remember while you're going over the website.
-    </p>
-    <p>
-      At present, I'm open to <b>part time remote job</b> offers.
-    </p>
-    <p>
-      If you realize that I would be a good fit, drop me 
-      a message at <b> Michael.keepgoing@gmail.com' </b>.
-    </p>
-    <p>
-      Thank you. Now, you're free to go further.
-    </p>
+     开发中...
   </div>
 );
 
 const ForContactPageContent = (
   <div className="c-remark-screen__message">
-    <p>
-      <b>Hi there</b><br /> Before you leave
-    </p>
-    <p>
-      I want you to remember that at present, I am open to <b>part time remote job</b> offers.
-    </p>
-    <p>
-      If you feel that you want me on your team, drop me 
-      a message at <b> </b>.
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      Thank you<br />
-      <b>Restry</b>
-    </p>
+  开发中...
+     
   </div>
 );
 
