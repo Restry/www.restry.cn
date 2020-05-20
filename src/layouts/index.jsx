@@ -33,10 +33,10 @@ const DefaultLayout = (props) => {
   return (
     <div className="l-page-wrapper">
       <Helmet
-        title="I am a front-end developer"
+        title="程序设计助手小工具(Restry)"
         meta={[{
           name: 'description',
-          content: `I build web interfaces using: JavaScrip, ES2015, Babel, HTML5, CSS, CSS3, BEM, React, Gatsby, Webpack ...`
+          content: `程序设计助手小工具 支持: JavaScrip, ES2015, Babel, HTML5, CSS, CSS3, BEM, React, Gatsby, Webpack ...`
         }]}
       />
 

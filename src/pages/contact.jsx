@@ -8,7 +8,7 @@ import Icon from "../components/Icon";
 export default props => {
   return (
     <div className="c-content-box">
-      <Helmet title="Contact me" />
+      <Helmet title="联系" />
 
       <HeadlineWithFocus>
         You can get in touch <span>anytime through</span>

@@ -39,7 +39,7 @@ export default () => {
   console.log(`params:`, params);
   return (
     <div className="c-content-box">
-      <Helmet title="Let's play" />
+      <Helmet title="知识介绍" />
       <BookList title="知识库分类" books={books} />
 
 
