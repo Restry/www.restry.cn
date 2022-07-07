@@ -9,7 +9,11 @@ const MainFooter = () => (
       and{" "}
       <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
         React
-      </a>. Hosted on{" "}
+      </a>. 
+      <a href="https://beian.miit.gov.cn/">
+      京ICP备20022013号-1
+      </a>
+      Hosted on{" "}
       <a
         href="https://www.netlify.com/"
         target="_blank"
